@@ -1,12 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from "react";
+import Image from './components/Image.js';
 
 
 function App() {
 
   const [images, setImages] = useState([])
   const [imageUrls, setImageUrls] = useState([])
+  const [page, setPage] = useState("HTN")
+  
   function onImageChange(e) {
     setImages([...images, ...e.target.files])
   }
@@ -24,7 +27,9 @@ function App() {
   return (
     <div className="App">
       <div className = "Header">
-
+        <button className = "Button">
+          <h1>Hack the North</h1>
+        </button>
       </div>
       <div className = "Body">
         <div className = "Left">
@@ -33,25 +38,21 @@ function App() {
             Hack The North 2022: Branding
           </div>
 
-
-          
-
-
-
           <div className = "Elements">
 
             
 
 
                 <div className = "Col">
-                  <div style = {{width: "90%", borderWidth: "2px", borderStyle: "solid", height: "50px"}}>
-                    <input type="file" multiple accept="image/*" onChange={onImageChange} />
+                  
+                  <div className = "File">
+                    <input className = "Upload" type="file" multiple accept="image/*" onChange={onImageChange} />
                   </div>
 
                   {imageUrls.map((imageSrc, index) => 
                     {return(
                       
-                      (index % 4) === 0 && <img style = {{marginBottom: "15px", width: "90%"}} key = {index} src = {imageSrc}></img>
+                      (index % 4) === 0 && <Image src = {imageSrc} key = {index} />
                     
                     )
                     }
@@ -62,7 +63,7 @@ function App() {
                   {imageUrls.map((imageSrc, index) => 
                       {return(
                         
-                        (index % 4) === 1 && <img style = {{marginBottom: "15px", width: "90%"}} key = {index} src = {imageSrc}></img>
+                        (index % 4) === 1 && <Image src = {imageSrc} key = {index} />
                       
                       )
                       }
@@ -72,7 +73,7 @@ function App() {
                   {imageUrls.map((imageSrc, index) => 
                       {return(
                         
-                        (index % 4) === 2 && <img style = {{marginBottom: "15px", width: "90%"}} key = {index} src = {imageSrc}></img>
+                        (index % 4) === 2 && <Image src = {imageSrc} key = {index} />
                       
                       )
                       }
@@ -82,7 +83,7 @@ function App() {
                   {imageUrls.map((imageSrc, index) => 
                       {return(
                         
-                        (index % 4) === 3 && <img style = {{marginBottom: "15px", width: "90%"}} key = {index} src = {imageSrc}></img>
+                        (index % 4) === 3 && <Image src = {imageSrc} key = {index} />
                       
                       )
                       }
@@ -98,7 +99,15 @@ function App() {
         </div>
 
         <div className = "Right">
-          side bar
+          
+
+          <div>All</div>
+          <div>Image</div>
+          <div>Video</div>
+          <div>Audio</div>
+          <div>Link</div>
+          <div>Text</div>
+
         </div>
       </div>
       

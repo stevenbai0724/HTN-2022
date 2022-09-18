@@ -10,9 +10,6 @@
 }
 .Col {
   width: 25%;
-  border-color: white;
-  border-width: 2px;
-  border-style: solid;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -20,18 +17,36 @@
  
   
 }
+.File {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  width: 90%;
+  margin-bottom: 15px;
+}
+.Upload {
+  font-size: 15pt;
+  font-family: sans-serif;
+  max-width: 100%;
+}
 .Left {
-  width: 80%;
-  background-color: black;
+  width: 85%;
+  background-color: #151515;
   min-height: 150vh;
   padding-left: 50px;
   text-align: left;
   
 }
 .Right {
-  width: 20%;
+  width: 15%;
   background-color: #151515;
   min-height: 150vh;
+  display:flex;
+  flex-direction: column;
+  gap:15px;
+  padding-top: 30px;
+  text-align: left;
 }
 .Header {
   background-color: #999C9F;
@@ -39,8 +54,19 @@
   width: 100%;
   position:sticky;
   top:0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-
+.Button {
+  width: 100%;
+  background-color: #222222;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #959595;
+}
 .Body{
   display:flex;
   flex-direction: row;
@@ -49,8 +75,8 @@
 
 .Title{
   width:100%;
-  font-size:20;
-  padding: 20px 0;
+  font-size:24pt;
+  padding: 30px 0;
 }
 .Elements{
   min-height: 100%;
